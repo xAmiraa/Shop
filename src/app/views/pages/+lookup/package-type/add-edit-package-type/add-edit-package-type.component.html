@@ -1,0 +1,51 @@
+<form [formGroup]="form" (ngSubmit)="save()">
+  <div class="modal-header">
+    <h4 class="modal-title">
+      <span *ngIf="mode == 'create'">Add New Package Type</span>
+      <span *ngIf="mode == 'update'">Update Package Type</span>
+    </h4>
+    <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body p-4">
+
+    <!-- Account form starts -->
+    <div class="row">
+      <div class="col-12">
+        <div class="form-group">
+          <div class="controls">
+            <label>Name <span *ngIf="isControlRequired(form, 'name')" style="color: red;">*</span></label>
+            <input formControlName="name" type="text" class="form-control" placeholder="Name"
+              [ngClass]="{ 'is-invalid': isInvalidControl(form, 'name'), 'is-valid': isValidControl(form, 'name') }">
+            <div *ngIf="isControlHasError(form, 'name','required')" class="help-block mt-1 text-danger"> <i
+                class="ft-alert-circle align-middle"></i>
+                This is required
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="form-group">
+          <div class="controls">
+            <label>Description <span *ngIf="isControlRequired(form, 'description')" style="color: red;">*</span></label>
+            <textarea formControlName="description" class="form-control" placeholder="Description" cols="30"
+              rows="5"></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Account form ends -->
+
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="activeModal.close('Close click')">Close</button>
+    <button type="submit" class="btn btn-primary" [disabled]="form.invalid">
+      <span *ngIf="mode == 'create'">Add New</span>
+      <span *ngIf="mode == 'update'">Update</span>
+    </button>
+  </div>
+  <ngx-spinner>
+    <p style="color: white"> Loading... </p>
+  </ngx-spinner>
+</form>

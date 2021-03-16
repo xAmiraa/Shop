@@ -1,0 +1,86 @@
+// .ngx-datatable *, .ngx-datatable :after, .ngx-datatable :before {
+//   font-weight: 700;
+// }
+.ngx-datatable.fixed-header .datatable-header .datatable-header-inner .datatable-header-cell {
+  font-weight: 700;
+  font-size: initial;
+}
+
+.ngx-datatable.bootstrap .datatable-body .datatable-body-row .datatable-body-cell {
+  font-size: initial;
+}
+
+#ngx-datatables-server-side .card-header .card-title {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+
+// primeng table
+.p-datatable .p-datatable-thead > tr > th {
+  font-weight: 700 !important;
+}
+
+.p-multiselect-panel .p-multiselect-header .p-multiselect-filter-container .p-inputtext {
+  height: 30px !important;
+  margin-right: 3px !important;
+}
+
+
+// Responsive tables with no scroll on mobile
+// :host ::ng-deep {    
+//   .p-datatable-responsive-demo .p-datatable-tbody > tr > td .p-column-title {
+//       display: none;
+//   }
+// }
+
+// @media screen and (max-width: 40rem) {
+//   :host ::ng-deep {
+//       .p-datatable {
+//           &.p-datatable-responsive-demo {
+//               .p-datatable-thead > tr > th,
+//               .p-datatable-tfoot > tr > td {
+//                   display: none !important;
+//               }
+
+//               .p-datatable-tbody > tr > td {
+//                   text-align: left;
+//                   display: block;
+//                   width: 100%;
+//                   float: left;
+//                   clear: left;
+//                   border: 0 none;
+
+//                   .p-column-title {
+//                       padding: .4rem;
+//                       min-width: 30%;
+//                       display: inline-block;
+//                       margin: -.4em 1em -.4em -.4rem;
+//                       font-weight: bold;
+//                   }
+
+//                   &:last-child {
+//                       border-bottom: 1px solid var(--surface-d);
+//                   }
+//               }
+//           }
+//       }
+//   }
+// }
+
+// Responsive tables with scroll on mobile
+@media screen and (max-width: 1277px) {
+  :host ::ng-deep {
+    .p-datatable {
+      .p-datatable-wrapper {
+        overflow: auto !important;
+      }
+      &.p-datatable-responsive-demo {
+          .p-datatable-thead > tr > th,
+          .p-datatable-tfoot > tr > td {
+            width: 150px !important;
+          }
+      }
+    }
+  }
+}
